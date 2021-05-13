@@ -322,7 +322,8 @@ git graphlinelog
 git shortlog -sne --after="28 Feb 2021" --before="01 Apr 2021" # short list of commits sorted by contributors during a given period
 git shortlog --after="28 Feb 2021" --before="01 Apr 2021" --merges # merge commits, replace shortlog by log for commit messages
 git log --format=%B -n 1 <commit-hash> # show commit message
-git log --merges --first-parent master --pretty=format:"%h %C(blue)%<(15,trunc)%aN %C(white)%<(22)%ar%Creset %C(green)%s" # log of merge commits to master, with commit hash & author name 
+git log --merges --first-parent master --pretty=format:"%h %C(blue)%<(15,trunc)%aN %C(white)%<(22)%ar%Creset %C(green)%s" # text log of merge commits to master, with commit hash, relative date & author name 
+git log --merges --first-parent master --pretty=format:%h,%aN,%aD,%s # CSV log of merge commits to master, with commit hash, absolute date & author name
 ```
 
 [Atlassian Git Tutorials](https://www.atlassian.com/git/tutorials)
